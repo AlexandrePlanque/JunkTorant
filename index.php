@@ -1,5 +1,7 @@
-/**
-*   Découverte de PhP & de git à travers l'utilisation des fonctionnalitées de PhP
-*   http://php.net/manual/fr/
-*
-**/
+<?php  
+
+include("template/header.php");
+include("template/navigation.php");
+include("template/content.php");
+include("contents/carte.php");
+include("template/footer.php");
