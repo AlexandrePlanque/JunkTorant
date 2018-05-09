@@ -1,5 +1,5 @@
 <?php  
-
+session_start();
 include("template/header.php");
 include("template/navigation.php");
 include("template/content.php");

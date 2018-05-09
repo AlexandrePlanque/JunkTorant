@@ -1,18 +1,13 @@
 
-
 form{
     display:block;
     margin: auto;
     width: 400px;
-    min-height: 200px;
     background-color: grey;
-    margin-top:100px;
     padding: 20px;
-    padding-top: 60px;
     border: 2px solid black;
     border-radius : 10px; 
 }
-
 form > input {
     display:block;
     width: 100%;
@@ -20,12 +15,11 @@ form > input {
     height: 1.9em;
     margin: auto;
     margin-bottom:15px;
-    margin-top: 15px;
     border-radius: 10px;
     text-align: center;
 }
-
 form > input[type=submit]{
     width:40%;
     background-color:lightgrey;
 }
+
