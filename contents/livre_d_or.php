@@ -2,17 +2,26 @@
 <?php
 $formulaire = '<div class="well">
      <h4>Laissez un commentaire:</h4><br>
-       <form action="" method="post" role="form">
-               <div class="form-group">
+      
                  <label for="comment">Votre commentaire</label><br>
-                   <textarea name="comment_content" class="form-control" rows="3"></textarea>
-               </div>
-               <button type="submit" name="create_comment" class="btn btn-primary">Envoyer</button>
+                 <form action="./scripts/message.php" method="post">
+                   <input type="textarea" name="message">
+               <input type="submit" value="Envoyer">
              </form>
          </div>';
 
+$json = json_decode(file_get_contents("/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json"), true);
+foreach($json as $message){
 if(isset($_SESSION['username'])){
     echo $formulaire;
-}else{
-    echo "fy";
+
 };
+    echo $message['user']."./|\.".$message['date']."./|\.".$message['message']."|||||";
+}
+
+/* $handle = "/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json";
+$message = 
+
+file_get_contents("/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json");
+json_decode(file_get_contents("/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json"), true);
+fclose($handle); */
