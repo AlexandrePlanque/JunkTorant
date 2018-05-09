@@ -11,25 +11,22 @@ $banner = '<section class="hero">
 </div>
 </section>';
 if(!isset($_GET['content'])){
-	echo $banner;
+	//echo $banner;
 };
 ?>
 <?php
-if($_GET['content'] === "carte"){
+if(!isset($_GET['content'])){
 	echo $banner;
-	include("./contents/carte.php");
-}elseif($_GET['content'] === "contact"){
+}else{
+	include('./contents/'.$_GET['content'].'.php');
 	echo $banner;
-	include("./contents/contact.php");
-}elseif($_GET['content'] === "login"){
-	include('./contents/login.php');
+}/* elseif($_GET['content'] === "livre_d_or"){
 	echo $banner;
-}elseif($_GET['content'] === "livre d' or"){
 	include('./contents/livre_d_or.php');
 }elseif($_GET['content'] === "accueil"){
 	echo $banner;
 	include('./contents/accueil.php');
-}
+} */
 ?>
 
 
