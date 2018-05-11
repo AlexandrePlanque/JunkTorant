@@ -42,9 +42,12 @@ $message = array(
    $json_source = file_get_contents('/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json');
    var_dump($json_source);
    $listeMessages = json_decode($json_source, true);
+   if($listeMessages === NULL){
+       $listeMessages = array();
+   }
 
    //Recup des infos
-   $dateMessage = date("d/m/Y H:i");
+   $dateMessage = date("d/m/Y, à H:i.");
    $user = $_SESSION['username'];
    $message = $_POST['message'];
 
@@ -65,3 +68,4 @@ $message = array(
    var_dump($listePostsJson);
    //Ecrire la nouvelle liste dans le fichier messages.json
    file_put_contents($file, $listePostsJson);
+   header("Location: {$_SERVER['HTTP_REFERER']}");

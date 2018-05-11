@@ -12,9 +12,9 @@
     $dir = scandir("/var/www/html/serveurweb/PhP/php-decouverte.bwb/contents");
     foreach ($dir as $files){
         if ($files!== "." && $files!==".."){
+            
             if(strpos($files,"_") !== FALSE){
-                $modif = ucfirst(str_replace('_', ' ', implode('.',explode(".",substr_replace($files, "'", strrpos($files,"_",-1), 0),-1))));
-                $done = substr_replace($modif, "", strrpos($modif," ", -1),0);
+                $done = ucfirst(implode('.',explode(".",str_replace ( "_", "", substr_replace(substr_replace($files, "'", strrpos($files,"_",-1), 0), " ", strrpos($files,"_",-9), 0)),-1)));
                 //echo '<li><a href="http://php-decouv.bwb/?content='.$done.'">'.$done.'</a></li>';
                 echo '<li><a href="http://localhost/serveurweb/PhP/php-decouverte.bwb/?content='.implode('.',explode(".",$files,-1)).'">'.$done.'</a></li>';
             }else{
@@ -26,6 +26,7 @@
     if(isset($_SESSION['username'])){
         echo '<li><form action="./scripts/deconnexion.php">Bonjour, '.$_SESSION['username'].'<button><small>logout</small></button></p></form></li>';
     }else{
+
         echo '<li><form action="./scripts/connexion.php" method="post">
         <input type="text" placeholder="Veuillez taper votre nom d\'utilisateur" name="username">
         <input type="submit" value="Connexion">
@@ -40,3 +41,10 @@
 			</nav>
 		</div>
 	</header>
+
+<!--
+        if($_SERVER['REQUEST_URI'] === "/".$files){
+
+        }
+
+-->

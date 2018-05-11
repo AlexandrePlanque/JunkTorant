@@ -183,7 +183,10 @@ header nav ul li a:hover{
     border-bottom: 2px solid #f34949;
 }
 
-
+.active{
+    color: #f34949;
+    border-bottom: 2px solid #f34949;
+}
 
 
 
@@ -675,4 +678,7 @@ footer .copyrights p a{
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
+}
+.goldenbook{
+    border: 5px solid red;
 }
