@@ -9,7 +9,9 @@
 			<nav>
 				<ul>
                 <?php 
-    $dir = scandir("/var/www/html/serveurweb/PhP/php-decouverte.bwb/contents");
+                include("scripts/function.php");
+                getNav();
+/*     $dir = scandir("/var/www/html/serveurweb/PhP/php-decouverte.bwb/contents");
     foreach ($dir as $files){
         if ($files!== "." && $files!==".."){
             
@@ -31,7 +33,7 @@
         <input type="text" placeholder="Veuillez taper votre nom d\'utilisateur" name="username">
         <input type="submit" value="Connexion">
       </form></li>';
-    }
+    } */
         
 ?>
 <!--http://localhost/serveurweb/PhP/php-decouverte.bwb/-->

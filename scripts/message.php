@@ -40,7 +40,8 @@ $message = array(
 
     //Recup des messages precedents
    $json_source = file_get_contents('/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json');
-   var_dump($json_source);
+
+   //si le json est vide on déclare listeMessages en tant qu'array vide pour éviter le NULL
    $listeMessages = json_decode($json_source, true);
    if($listeMessages === NULL){
        $listeMessages = array();
@@ -65,7 +66,7 @@ $message = array(
    
    //Recup du fichier d'origine
    $file = "/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json";
-   var_dump($listePostsJson);
-   //Ecrire la nouvelle liste dans le fichier messages.json
+
+   //Ecrire la nouvelle liste dans le fichier message.json
    file_put_contents($file, $listePostsJson);
    header("Location: {$_SERVER['HTTP_REFERER']}");

@@ -13,12 +13,15 @@ $formulaire = '<div class="well">
             echo $formulaire;
         
         };
-$json = json_decode(file_get_contents("/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json"), true);
+        
+        getMessage(); 
+
+/* $json = json_decode(file_get_contents("/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json"), true);
 foreach($json as $message){
 /* if(isset($_SESSION['username'])){
     echo $formulaire;
 
-}; */
+}; 
     echo '<div class="goldenbook">
     <div class="msg">
     <h4>Message n°'.$message['id'].'</h4>
@@ -28,7 +31,7 @@ foreach($json as $message){
     <h6>Publié par '.$message['user'].', le '.$message['date'].'</h6>
     </div>
 </div>';
-}
+} */
 
 /* $handle = "/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json";
 $message = 
@@ -36,3 +39,4 @@ $message =
 file_get_contents("/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json");
 json_decode(file_get_contents("/home/alexandreplanque/ServeurWeb/PhP/php-decouverte.bwb/data/message.json"), true);
 fclose($handle); */
+?>
